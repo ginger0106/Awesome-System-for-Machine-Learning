@@ -17,16 +17,32 @@ System for machine learning inference.
 - ModelDB: A system to manage ML models [[GitHub]](https://github.com/mitdbg/modeldb) [[MIT short paper]](https://mitdbg.github.io/modeldb/papers/hilda_modeldb.pdf)
 - iterative/dvc: Data & models versioning for ML projects, make them shareable and reproducible [[GitHub]](https://github.com/iterative/dvc)
 
-## Model Serving
+## Autoscaling 
 - Swayam: distributed autoscaling to meet SLAs of machine learning inference services with resource efficiency [[Paper]](https://www.microsoft.com/en-us/research/uploads/prod/2018/01/2017.Middleware.Swayam.TailLatencyInAzureML.pdf)
   - Gujarati, Arpan, Sameh Elnikety, Yuxiong He, Kathryn S. McKinley, and Björn B. Brandenburg.
   - In Proceedings of the 18th ACM/IFIP/USENIX Middleware Conference, pp. 109-120. 2017.
   - Summary: a cloud autoscaler. (1) model-based autoscaling that takes into account SLAs and ML inference workload characteristics, (2) a distributed protocol that uses partial load information and prediction at frontends to provi- sion new service instances, and (3) a backend self-decommissioning protocol for service instances
+
+## Adaptive Batching
+
+## Industry and Community
+- TorchServe is a flexible and easy to use tool for serving PyTorch models. [[GitHub]](https://github.com/pytorch/serve)
+- Tensorflow-serving: Flexible, high-performance ml serving [[Paper]](https://arxiv.org/pdf/1712.06139) [[GitHub]](https://github.com/tensorflow/serving)
+  - Olston, Christopher, et al.
+- IntelAI/OpenVINO-model-server: Inference model server implementation with gRPC interface, compatible with TensorFlow serving API and OpenVINO™ as the execution backend. [[GitHub]](https://github.com/IntelAI/OpenVINO-model-server)
+- NVIDIA/tensorrt-inference-server: The TensorRT Inference Server provides a cloud inferencing solution optimized for NVIDIA GPUs. [[GitHub]](https://github.com/NVIDIA/tensorrt-inference-server)
+- Model Server for Apache MXNet: Model Server for Apache MXNet is a tool for serving neural net models for inference [[GitHub]](https://github.com/awslabs/mxnet-model-server)
+- TFX: A TensorFlow-Based Production-Scale Machine Learning Platform [[Paper]](http://stevenwhang.com/tfx_paper.pdf) [[Website]](https://www.tensorflow.org/tfx) [[GitHub]](https://github.com/tensorflow/tfx)
+  - Baylor, Denis, et al. (*KDD 2017*)
+  
+  
+## Model Serving
+
 - Swift machine learning model serving scheduling: a region based reinforcement learning approach. [[Paper]](https://dl.acm.org/doi/10.1145/3295500.3356164) [[GitHub]](https://github.com/SC-RRL/RRL)
   - Qin, Heyang, Syed Zawad, Yanqi Zhou, Lei Yang, Dongfang Zhao, and Feng Yan.
   - In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis, pp. 1-23. 2019.
-  - Summary: The system performances under different similar con- figurations in a region can be accurately estimated by using the system performance under one of these configurations, due to their similarity. Region based DRL is designed for parallelism selection.
-- TorchServe is a flexible and easy to use tool for serving PyTorch models. [[GitHub]](https://github.com/pytorch/serve)
+  - Summary: The system performances under different similar configurations in a region can be accurately estimated by using the system performance under one of these configurations, due to their similarity. Region based DRL is designed for parallelism selection.
+
 - Seldon Core: Blazing Fast, Industry-Ready ML. An open source platform to deploy your machine learning models on Kubernetes at massive scale. [[GitHub]](https://github.com/SeldonIO/seldon-core)
 - MArk: Exploiting Cloud Services for Cost-Effective, SLO-Aware Machine Learning Inference Serving [[Paper]](https://www.usenix.org/system/files/atc19-zhang-chengliang.pdf) [[GitHub]](https://github.com/marcoszh/MArk-Project)
   - Zhang, C., Yu, M., Wang, W. and Yan, F., 2019. 
@@ -45,12 +61,9 @@ System for machine learning inference.
 - {PRETZEL}: Opening the Black Box of Machine Learning Prediction Serving Systems. [[Paper]](https://www.usenix.org/system/files/osdi18-lee.pdf)
   - Lee, Y., Scolari, A., Chun, B.G., Santambrogio, M.D., Weimer, M. and Interlandi, M., 2018. (*OSDI 2018*)
 - Brusta: PyTorch model serving project [[GitHub]](https://github.com/hyoungseok/brusta)
-- Model Server for Apache MXNet: Model Server for Apache MXNet is a tool for serving neural net models for inference [[GitHub]](https://github.com/awslabs/mxnet-model-server)
-- TFX: A TensorFlow-Based Production-Scale Machine Learning Platform [[Paper]](http://stevenwhang.com/tfx_paper.pdf) [[Website]](https://www.tensorflow.org/tfx) [[GitHub]](https://github.com/tensorflow/tfx)
-  - Baylor, Denis, et al. (*KDD 2017*)
-- Tensorflow-serving: Flexible, high-performance ml serving [[Paper]](https://arxiv.org/pdf/1712.06139) [[GitHub]](https://github.com/tensorflow/serving)
-  - Olston, Christopher, et al.
-- IntelAI/OpenVINO-model-server: Inference model server implementation with gRPC interface, compatible with TensorFlow serving API and OpenVINO™ as the execution backend. [[GitHub]](https://github.com/IntelAI/OpenVINO-model-server)
+
+
+
 - Clipper: A Low-Latency Online Prediction Serving System [[Paper]](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-crankshaw.pdf)
 [[GitHub]](https://github.com/ucbrise/clipper)
   - Crankshaw, Daniel, et al. (*NSDI 2017*)
@@ -66,7 +79,7 @@ System for machine learning inference.
   - Summary: Contain both training and inference. Auto-Hype-Parameter search for training. Ensemble models for inference. Using DRL to balance trade-off between accuracy and latency.
 - GraphPipe: Machine Learning Model Deployment Made Simple [[GitHub]](https://github.com/oracle/graphpipe)
 - Orkhon: ML Inference Framework and Server Runtime [[GitHub]](https://github.com/vertexclique/orkhon)
-- NVIDIA/tensorrt-inference-server: The TensorRT Inference Server provides a cloud inferencing solution optimized for NVIDIA GPUs. [[GitHub]](https://github.com/NVIDIA/tensorrt-inference-server)
+
 - Apache PredictionIO® is an open source Machine Learning Server built on top of a state-of-the-art open source stack for developers and data scientists to create predictive engines for any machine learning task [[Website]](http://predictionio.apache.org/)
 
 ## Cache for Inference
@@ -75,6 +88,7 @@ System for machine learning inference.
 - Xu, Mengwei, et al. "DeepCache: Principled cache for mobile deep vision." Proceedings of the 24th Annual International Conference on Mobile Computing and Networking. 2018. [[Paper]](https://arxiv.org/pdf/1712.01670.pdf)
 - Park, Keunyoung, and Doo-Hyun Kim. "Accelerating image classification using feature map similarity in convolutional neural networks." Applied Sciences 9.1 (2019): 108. [[Paper]](https://www.mdpi.com/2076-3417/9/1/108/htm)
 - Cavigelli, Lukas, and Luca Benini. "CBinfer: Exploiting frame-to-frame locality for faster convolutional network inference on video streams." IEEE Transactions on Circuits and Systems for Video Technology (2019). [[Paper]](https://arxiv.org/pdf/1808.05488)
+
 
 ## Inference Optimization
 
@@ -110,3 +124,8 @@ System for machine learning inference.
 - TASO: Optimizing Deep Learning Computation with Automatic Generation of Graph Substitutions [[Paper]](https://cs.stanford.edu/~matei/papers/2019/sosp_taso.pdf) [[GitHub]](https://github.com/jiazhihao/TASO)
   - Jia, Zhihao, Oded Padon, James Thomas, Todd Warszawski, Matei Zaharia, and Alex Aiken. (*SOSP 2019*)
   - Experiments tested on TVM and XLA
+
+
+## Edge inference
+
+## Research groups
